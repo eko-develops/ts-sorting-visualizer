@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sorting Visualizer</title>
+		<link rel="stylesheet" href="/src/styles.scss" />
+	</head>
+	<body>
+		<h1>Sorting Algorithm Visualizer</h1>
+		<div class="container">
+			<div class="bars"></div>
+			<div class="controls">
+				<button id="randomize" type="button">Randomize</button>
+				<select id="sort-option">
+					<option value="bubbleSort">Bubble Sort</option>
+					<option value="insertionSort">Insertion Sort</option>
+					<option value="selectionSort">Selection Sort</option>
+					<option value="simpleSort">Simple Sort</option>
+				</select>
+				<button id="search" type="button">Start Sort</button>
+				<button id="stop" type="button">Stop Sort</button>
+			</div>
+		</div>
+
+		<script type="module" src="/src/app.ts"></script>
+	</body>
+</html>
