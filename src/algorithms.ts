@@ -3,20 +3,33 @@ import { delay, displayBars } from './utils';
 export async function bubbleSort(array: HTMLDivElement[]) {
 	for (let i = 0; i < array.length; i++) {
 		for (let j = 0; j < array.length - 1; j++) {
-			await delay(100);
+			/**
+			 * We want to show the sorting actually happening.
+			 * First select the elements we are comparing and wait so
+			 * we can see before they move
+			 */
+			array[j].classList.add('selected');
+			array[j + 1].classList.add('selected');
+			await delay(1000);
 
 			if (Number(array[j].dataset.value) > Number(array[j + 1].dataset.value)) {
+				/**
+				 * when we swap, we will also wait so we can see the swap
+				 */
 				const temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
+				displayBars(array);
+				await delay(1000);
 			}
 
-			displayBars(array);
-			await delay(100);
+			/**
+			 * Selection removed regardless of what happens
+			 */
+			array[j].classList.remove('selected');
+			array[j + 1].classList.remove('selected');
 		}
 	}
-
-	// return array;
 }
 
 // function insertionSort(array) {
