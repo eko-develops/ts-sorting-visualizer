@@ -3,17 +3,16 @@ import { delay, displayBars } from './utils';
 export async function bubbleSort(array: HTMLDivElement[]) {
 	for (let i = 0; i < array.length; i++) {
 		for (let j = 0; j < array.length - 1; j++) {
-			await delay();
+			await delay(100);
 
-			if (array[j] > array[j + 1]) {
+			if (Number(array[j].dataset.value) > Number(array[j + 1].dataset.value)) {
 				const temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
 			}
 
 			displayBars(array);
-
-			await delay();
+			await delay(100);
 		}
 	}
 
