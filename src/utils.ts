@@ -2,6 +2,12 @@ import { bubbleSort } from './algorithms';
 
 const DELAY = 50;
 
+/**
+ *
+ * @param min Default -1000. Minimum number for range.
+ * @param max Default 1000. Maximum number for range.
+ * @returns Random number between minimum and maximum.
+ */
 export function getRandomNum(min: number = -1000, max: number = 1000): number {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -13,8 +19,8 @@ export function delay(time: number = DELAY) {
 }
 
 /**
- * This function will clear then display the bars within the bars container.
- * It will use the values in the array to set the height and also set the value as a dataset
+ * Appends each HTML Div element to the bars container.
+ * @param array An array of HTML Div elements
  */
 export function displayBars(array: HTMLDivElement[]) {
 	// clear bars
@@ -26,14 +32,21 @@ export function displayBars(array: HTMLDivElement[]) {
 	}
 }
 
+/**
+ * Create HTML Div elements depending on arguments.
+ * @param amount The amount of HTML div bars to create.
+ * @param minValue Minimum value of the bar.
+ * @param maxValue Maxiumum value of the bar.
+ * @returns Array of HTML Div elements each representing a bar.
+ */
 export function createBars(
-	size: number,
-	minValue: number,
-	maxValue: number
+	amount: number,
+	minValue?: number,
+	maxValue?: number
 ): HTMLDivElement[] {
 	const array = [];
 
-	for (let i = 0; i < size; i++) {
+	for (let i = 0; i < amount; i++) {
 		const randomValue = getRandomNum(minValue, maxValue);
 		const barEl = document.createElement('div');
 		barEl.classList.add('bar');
@@ -45,6 +58,10 @@ export function createBars(
 	return array;
 }
 
+/**
+ * Start the sorting algorithm search depending on select option.
+ * @param array An array of HTML Div elements.
+ */
 export function startSearch(array: HTMLDivElement[]) {
 	const option = document.querySelector('#sort-option') as HTMLSelectElement;
 	const value = option.value;
