@@ -1,4 +1,4 @@
-import { delay, displayBars } from './utils';
+import { delay, deselectDiv, displayBars, selectDiv } from './utils';
 
 export async function bubbleSort(array: HTMLDivElement[]) {
 	for (let i = 0; i < array.length; i++) {
@@ -8,10 +8,9 @@ export async function bubbleSort(array: HTMLDivElement[]) {
 			 * First select the elements we are comparing and wait so
 			 * we can see before they move
 			 */
-			array[j].classList.add('selected');
-			array[j].innerText = '1';
-			array[j + 1].classList.add('selected');
-			array[j + 1].innerText = '2';
+			selectDiv(array[j], 1);
+			selectDiv(array[j + 1], 2);
+
 			await delay();
 
 			if (Number(array[j].dataset.value) > Number(array[j + 1].dataset.value)) {
@@ -19,16 +18,15 @@ export async function bubbleSort(array: HTMLDivElement[]) {
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
 			}
+
 			displayBars(array);
 			await delay();
 
 			/**
-			 * Selection removed regardless of what happens
+			 * Deslect elements after displaying
 			 */
-			array[j].classList.remove('selected');
-			array[j + 1].classList.remove('selected');
-			array[j].innerText = '';
-			array[j + 1].innerText = '';
+			deselectDiv(array[j]);
+			deselectDiv(array[j + 1]);
 		}
 	}
 }
