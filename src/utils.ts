@@ -1,6 +1,6 @@
 import { bubbleSort } from './algorithms';
 
-const DELAY = 50;
+const DEFAULT_DELAY = 1000;
 
 /**
  *
@@ -12,7 +12,7 @@ export function getRandomNum(min: number = -1000, max: number = 1000): number {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
-export function delay(time: number = DELAY) {
+export function delay(time: number = DEFAULT_DELAY) {
 	return new Promise(function (resolve) {
 		setTimeout(resolve, time);
 	});
