@@ -79,7 +79,7 @@ export function startSearch(array: HTMLDivElement[]) {
 	}
 }
 
-export function selectDiv(div: HTMLDivElement, value: number) {
+export function selectDiv(div: HTMLDivElement, value: number | string) {
 	div.classList.add('selected');
 	div.innerText = value.toString();
 }
