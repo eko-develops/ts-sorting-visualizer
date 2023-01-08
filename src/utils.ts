@@ -79,9 +79,9 @@ export function startSearch(array: HTMLDivElement[]) {
 	}
 }
 
-export function selectDiv(div: HTMLDivElement, value: string) {
+export function selectDiv(div: HTMLDivElement, value: number) {
 	div.classList.add('selected');
-	div.innerText = value;
+	div.innerText = value.toString();
 }
 
 export function deselectDiv(div: HTMLDivElement) {
