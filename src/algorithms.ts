@@ -15,15 +15,12 @@ export async function bubbleSort(array: HTMLDivElement[]) {
 			await delay();
 
 			if (Number(array[j].dataset.value) > Number(array[j + 1].dataset.value)) {
-				/**
-				 * when we swap, we will also wait so we can see the swap
-				 */
 				const temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
-				displayBars(array);
-				await delay();
 			}
+			displayBars(array);
+			await delay();
 
 			/**
 			 * Selection removed regardless of what happens
