@@ -79,6 +79,16 @@ export function startSearch(array: HTMLDivElement[]) {
 	}
 }
 
+export function selectDiv(div: HTMLDivElement, value: string) {
+	div.classList.add('selected');
+	div.innerText = value;
+}
+
+export function deselectDiv(div: HTMLDivElement) {
+	div.classList.remove('selected');
+	div.innerText = '';
+}
+
 // function testSortingAlgs() {
 // 	const size = 10;
 
