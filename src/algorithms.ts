@@ -9,8 +9,10 @@ export async function bubbleSort(array: HTMLDivElement[]) {
 			 * we can see before they move
 			 */
 			array[j].classList.add('selected');
+			array[j].innerText = '1';
 			array[j + 1].classList.add('selected');
-			await delay(1000);
+			array[j + 1].innerText = '2';
+			await delay();
 
 			if (Number(array[j].dataset.value) > Number(array[j + 1].dataset.value)) {
 				/**
@@ -20,7 +22,7 @@ export async function bubbleSort(array: HTMLDivElement[]) {
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
 				displayBars(array);
-				await delay(1000);
+				await delay();
 			}
 
 			/**
@@ -28,6 +30,8 @@ export async function bubbleSort(array: HTMLDivElement[]) {
 			 */
 			array[j].classList.remove('selected');
 			array[j + 1].classList.remove('selected');
+			array[j].innerText = '';
+			array[j + 1].innerText = '';
 		}
 	}
 }

@@ -28,6 +28,9 @@ body {
 			.bar {
 				width: 100%;
 				background: tomato;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
 
 				&.selected {
 					background: green;
