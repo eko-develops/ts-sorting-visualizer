@@ -33,19 +33,19 @@ export async function bubbleSort(array: HTMLDivElement[]) {
 	}
 }
 
-// function insertionSort(array) {
-// 	for (let i = 1; i < array.length; i++) {
-// 		const temp = array[i];
+export async function insertionSort(array: HTMLDivElement[]) {
+	for (let i = 1; i < array.length; i++) {
+		const temp = array[i];
 
-// 		for (let j = i - 1; j >= 0; j--) {
-// 			if (array[j] > temp) {
-// 				array[j + 1] = array[j];
-// 				array[j] = temp;
-// 			}
-// 		}
-// 	}
-// 	return array;
-// }
+		for (let j = i - 1; j >= 0; j--) {
+			if (Number(array[j].dataset.value) > Number(temp.dataset.value)) {
+				array[j + 1] = array[j];
+				array[j] = temp;
+			}
+			displayBars(array);
+		}
+	}
+}
 
 // function selectionSort(array) {
 // 	for (let i = 0; i < array.length; i++) {

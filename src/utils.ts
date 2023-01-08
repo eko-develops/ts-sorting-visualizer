@@ -1,4 +1,4 @@
-import { bubbleSort } from './algorithms';
+import { bubbleSort, insertionSort } from './algorithms';
 
 const DEFAULT_DELAY = 1000;
 
@@ -70,6 +70,9 @@ export function startSearch(array: HTMLDivElement[]) {
 	switch (value) {
 		case 'bubbleSort':
 			bubbleSort(array);
+			break;
+		case 'insertionSort':
+			insertionSort(array);
 			break;
 		default:
 			break;
