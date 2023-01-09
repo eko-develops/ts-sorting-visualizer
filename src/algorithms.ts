@@ -34,22 +34,26 @@ export async function bubbleSort(array: HTMLDivElement[]) {
 export async function insertionSort(array: HTMLDivElement[]) {
 	for (let i = 1; i < array.length; i++) {
 		const temp = array[i];
-		selectDiv(temp, 'T', true);
 
-		await delay();
+		selectDiv(temp, 'T', true);
+		await delay(2000);
 
 		for (let j = i - 1; j >= 0; j--) {
 			selectDiv(array[j], '1');
-			// selectDiv(array[j + 1], '2');	// this is temp
-
-			await delay(10000);
+			selectDiv(array[j + 1], '2');
 
 			if (Number(array[j].dataset.value) > Number(temp.dataset.value)) {
+				temp.classList.remove('temp');
 				array[j + 1] = array[j];
 				array[j] = temp;
 			}
+			await delay();
+
 			displayBars(array);
 
+			await delay();
+
+			array[j + 1].classList.remove('temp');
 			deselectDiv(array[j]);
 			deselectDiv(array[j + 1]);
 		}
