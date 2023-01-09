@@ -94,6 +94,7 @@ export function selectDiv(
 
 export function deselectDiv(div: HTMLDivElement) {
 	div.classList.remove('selected');
+	div.classList.remove('temp');
 	div.innerText = '';
 }
 
