@@ -53,28 +53,27 @@ export async function insertionSort(array: HTMLDivElement[]) {
 
 			await delay();
 
-			array[j + 1].classList.remove('temp');
 			deselectDiv(array[j]);
 			deselectDiv(array[j + 1]);
 		}
 	}
 }
 
-// function selectionSort(array) {
-// 	for (let i = 0; i < array.length; i++) {
-// 		let min = i;
-// 		for (let j = i + 1; j < array.length; j++) {
-// 			if (array[min] > array[j]) {
-// 				min = j;
-// 			}
-// 		}
-// 		let temp = array[i];
-// 		array[i] = array[min];
-// 		array[min] = temp;
-// 	}
+export async function selectionSort(array: HTMLDivElement[]) {
+	for (let i = 0; i < array.length; i++) {
+		let min = i;
+		for (let j = i + 1; j < array.length; j++) {
+			if (array[min] > array[j]) {
+				min = j;
+			}
+		}
+		let temp = array[i];
+		array[i] = array[min];
+		array[min] = temp;
+	}
 
-// 	return array;
-// }
+	return array;
+}
 
 // function simpleSort(array) {
 // 	for (let i = 0; i < array.length; i++) {
